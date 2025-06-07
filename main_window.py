@@ -305,6 +305,12 @@ class MainWindow(QMainWindow):
         
         toolbar.addSeparator()
         
+        add_company_action = QAction("➕ Добавить компанию", self)
+        add_company_action.triggered.connect(self.add_company)
+        toolbar.addAction(add_company_action)
+        
+        toolbar.addSeparator()
+        
         add_model_action = QAction("➕ Добавить модель", self)
         add_model_action.triggered.connect(self.add_model)
         toolbar.addAction(add_model_action)
@@ -316,11 +322,6 @@ class MainWindow(QMainWindow):
         
         # Панель управления
         control_panel = QHBoxLayout()
-        
-        add_company_btn = QPushButton("➕ Добавить компанию")
-        add_company_btn.clicked.connect(self.add_company)
-        control_panel.addWidget(add_company_btn)
-        
         control_panel.addStretch()
         layout.addLayout(control_panel)
         
